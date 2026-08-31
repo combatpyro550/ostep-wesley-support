@@ -1,29 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<!doctype html> 
+<html lang="en"> 
+<head> 
+  <!-- Core Meta Tags -->
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
   <title>Help Ostep Wesley Secure Immigration Legal Defense</title>
-  <meta name="description" content="Help Ostep Wesley obtain qualified legal representation as he faces an immigration court hearing on November 30, 2026.">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <!-- Primary Search Engine Meta Tag (Exactly 159 Characters) -->
+  <meta name="description" content="Support Ostep Wesley's immigration legal defense fund. Learn about his story and help us raise $15,000 for critical legal representation before his court hearing.">
 
-  <meta property="og:title" content="Help Ostep Wesley Secure Immigration Legal Defense">
-  <meta property="og:description" content="Stand with Ostep Wesley and help provide the legal representation he needs.">
-  <meta property="og:url" content="https://standwithostep.org/">
+  <!-- Social Media Sharing Tags (Exactly 159 Characters) -->
+<meta property="og:description" content="Support Ostep Wesley's immigration legal defense fund. Learn about his story and help us raise $15,000 for critical legal representation before his court hearing.">
+
+  <!-- Twitter / X Card Meta Tag (Exactly 159 Characters) -->
+  <meta name="twitter:description" content="Support Ostep Wesley's immigration legal defense fund. Learn about his story and help us raise $15,000 for critical legal representation before his court hearing.">
+
+
+
+  <!-- Social Media Sharing Tags (Open Graph) -->
+  <meta property="og:title" content="Support Ostep Wesley | Immigration Legal Defense">
+  <meta property="og:description" content="Help Ostep Wesley raise $15,000 to secure the qualified legal representation he needs to properly present his case.">
+  <meta property="og:url" content="https://standwithostep.org">
   <meta property="og:type" content="website">
+  <!-- Note: This should ideally point directly to an actual image file (like a .jpg) later -->
+  <meta property="og:image" content="https://standwithostep.org/ostep-photo-1.91to1.jpg">
+
+  <!-- Twitter / X Card Customization -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Support Ostep Wesley | Legal Defense Fund">
+  <meta name="twitter:description" content="Help Ostep Wesley secure legal representation for his upcoming immigration court case.">
 
   <style>
     :root {
-      --navy: #102a43;
-      --navy-dark: #071b2e;
-      --olive: #1f5a35;
-      --gold: #c9971c;
-      --light: #f4f1e8;
+      --navy: #193755;
+      --olive: #5b6646;
+      --cream: #f7f4ed;
+      --text: #242424;
       --white: #ffffff;
-      --text: #222222;
-      --muted: #687078;
-      --border: #d9d5c8;
-      --shadow: 0 2px 14px rgba(0,0,0,.07);
+      --light: #eeece4;
     }
 
     * {
@@ -32,902 +46,1293 @@
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 85px;
     }
 
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
       color: var(--text);
-      background: #faf9f5;
-      line-height: 1.6;
+      background: var(--cream);
+      line-height: 1.65;
     }
 
-    img {
-      max-width: 100%;
-      height: auto;
-    }
+    /* =========================
+       STICKY NAVIGATION
+       ========================= */
 
-    a {
-      color: var(--navy);
-    }
-
-    .site-header {
+    header {
+      background: var(--navy);
+      color: var(--white);
+      padding: 16px 22px;
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: var(--navy-dark);
-      box-shadow: 0 2px 12px rgba(0,0,0,.15);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     }
 
-    .nav-inner {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 14px 22px;
+    nav {
+      max-width: 1100px;
+      margin: auto;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       gap: 20px;
     }
 
     .brand {
-      color: var(--white);
-      text-decoration: none;
       font-family: Georgia, serif;
       font-size: 22px;
       font-weight: bold;
-      line-height: 1.05;
-    }
-
-    .brand span {
-      display: block;
-    }
-
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-      gap: 18px;
     }
 
     nav a {
       color: var(--white);
       text-decoration: none;
-      font-weight: bold;
-      font-size: 15px;
+      margin-left: 18px;
     }
 
     nav a:hover {
-      color: #e8c45d;
+      text-decoration: underline;
     }
 
-    .container {
-      width: min(1120px, calc(100% - 36px));
-      margin: 0 auto;
-    }
 
-    section {
-      padding: 70px 0;
-    }
+    /* =========================
+       HERO
+       ========================= */
 
     .hero {
-      padding: 70px 0 55px;
-      background: var(--white);
-    }
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 22px;
 
-    .hero-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 45px;
-      align-items: center;
+      column-gap: 38px;
+      row-gap: 24px;
+
+      align-items: start;
     }
 
-    .eyebrow {
-      margin: 0 0 8px;
-      color: var(--olive);
+    /*
+      The headline occupies the entire width of the hero.
+      The two columns begin underneath it.
+    */
+    .hero-heading {
+      grid-column: 1 / -1;
+      width: 100%;
+    }
+
+    .hero-heading h1 {
+      margin: 0;
+      width: 100%;
+    }
+
+    .hero-content {
+      grid-column: 1;
+      align-self: start;
+    }
+
+    .hero-image {
+      grid-column: 2;
+      align-self: start;
+    }
+
+
+    /* =========================
+       TYPOGRAPHY
+       ========================= */
+
+    .kicker {
       font-family: Georgia, serif;
+      font-size: 24px;
       font-style: italic;
-      font-size: 27px;
+      color: var(--olive);
+      margin-bottom: 8px;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: Georgia, serif;
     }
 
     h1 {
-      margin: 0 0 24px;
       color: var(--navy);
-      font-family: Georgia, serif;
-      font-size: clamp(42px, 5vw, 66px);
-      line-height: 1.02;
+      font-size: 50px;
+      line-height: 1.08;
+      margin: 0;
     }
 
     h2 {
-      margin: 0 0 22px;
       color: var(--navy);
-      font-family: Georgia, serif;
-      font-size: clamp(31px, 4vw, 44px);
-      line-height: 1.1;
+      font-size: 32px;
+      margin-top: 0;
     }
 
     h3 {
       color: var(--navy);
-      margin-top: 0;
     }
 
-    .hero-lead {
-      font-size: 22px;
-      font-weight: bold;
+    .hero p {
+      font-size: 18px;
     }
 
-    .hero-photo {
+
+    /* =========================
+       PHOTOS
+       ========================= */
+
+    .photo {
       width: 100%;
+      max-height: 500px;
+      object-fit: cover;
       border-radius: 14px;
       display: block;
-      box-shadow: var(--shadow);
+      margin: 0;
     }
 
-    .btn-row {
+    .church-family-photo {
+      width: 100%;
+      max-width: 850px;
+      margin: 35px auto;
+      text-align: center;
+    }
+
+.church-family-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.photo-caption {
+  margin: 10px 0 0;
+  font-size: 14px;
+  font-style: italic;
+  opacity: 0.7;
+}
+/* =========================
+   FUNDRAISING THERMOMETER
+   ========================= */
+
+.fundraiser {
+  margin-top: 24px;
+  background: var(--white);
+  border-radius: 14px;
+  padding: 22px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  text-align: center;
+}
+
+.fundraiser h3 {
+  margin: 0 0 16px;
+  color: var(--navy);
+  font-size: 23px;
+}
+
+.thermometer-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.thermometer {
+  position: relative;
+  width: 52px;
+  height: 180px;
+  border: 3px solid var(--navy);
+  border-radius: 10px;
+  background: var(--light);
+  overflow: hidden;
+}
+
+.thermometer-fill {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1.67%;
+  background: var(--olive);
+  transition: height 0.5s ease;
+}
+
+.thermometer-bulb {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--olive);
+  border: 3px solid var(--navy);
+}
+
+.thermometer-scale {
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+  font-weight: bold;
+  color: var(--navy);
+  font-size: 12px;
+}
+.fundraiser-total {
+  margin-top: 38px;
+}
+
+.fundraiser-total .raised {
+  display: block;
+  font-family: Georgia, serif;
+  font-size: 30px;
+  color: var(--olive);
+  font-weight: bold;
+}
+
+.fundraiser-total .goal {
+  font-size: 15px;
+  color: var(--text);
+}
+
+.fundraiser-percent {
+  margin-top: 4px;
+  font-weight: bold;
+  color: var(--navy);
+}
+
+    /* =========================
+       BUTTONS
+       ========================= */
+
+    .buttons {
       display: flex;
-      flex-wrap: wrap;
       gap: 12px;
-      margin-top: 25px;
+      flex-wrap: wrap;
+      margin-top: 24px;
     }
 
     .btn {
       display: inline-block;
-      padding: 13px 20px;
+      padding: 13px 21px;
       border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
     }
 
-    .btn-primary {
-      color: var(--white);
+    .primary {
       background: var(--olive);
-    }
-
-    .btn-secondary {
       color: var(--white);
+    }
+
+    .secondary {
       background: var(--navy);
+      color: var(--white);
     }
 
-    .notice {
-      margin-top: 25px;
-      padding: 20px;
-      border-left: 5px solid var(--olive);
-      background: var(--light);
-      border-radius: 8px;
+    .primary:hover,
+    .secondary:hover {
+      opacity: 0.88;
     }
 
-    .notice strong {
-      color: var(--olive);
-    }
 
-    .section-alt {
-      background: var(--light);
-    }
+    /* =========================
+       MAIN CONTENT
+       ========================= */
 
-    .two-col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 45px;
-      align-items: center;
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 0 22px 60px;
     }
 
     .card {
       background: var(--white);
-      border: 1px solid var(--border);
       border-radius: 14px;
-      padding: 28px;
-      box-shadow: var(--shadow);
+      padding: 30px;
+      margin: 24px 0;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
     }
 
-    .urgent {
-      border: 2px solid var(--olive);
+    .highlight {
+      border-left: 6px solid var(--olive);
+      padding: 20px 22px;
+      background: var(--light);
+      margin: 22px 0;
     }
 
-    .urgent-date {
+    .highlight strong.amount {
+      display: block;
+      font-size: 34px;
       color: var(--olive);
-      font-size: 30px;
-      font-weight: bold;
-      text-align: center;
+      margin-bottom: 3px;
     }
 
-    .urgent-money {
-      color: var(--olive);
-      font-family: Georgia, serif;
-      font-size: 48px;
-      font-weight: bold;
-      text-align: center;
-      line-height: 1;
-      margin: 12px 0;
+    .important {
+      border-left: 6px solid var(--navy);
+      padding: 22px;
+      background: #f2f4f6;
+      margin: 24px 0;
     }
+
+    .important h3 {
+      margin-top: 0;
+      font-size: 24px;
+    }
+
 
     /* =========================
-       FUNDRAISING TRACKER
-       =========================
-       MANUAL UPDATE:
-       Change ONLY CURRENT_RAISED below when the campaign total changes.
-       The percentage and dollar displays update automatically.
+       HOW YOU CAN HELP
        ========================= */
 
-    .fundraising {
-      background: var(--white);
-    }
-
-    .fundraising-layout {
-      display: grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: 42px;
-      align-items: center;
-    }
-
-    /*
-     * DYNAMIC BUILDING TRACKER
-     *
-     * The source artwork is a 1024x1536 image. The actual building occupies
-     * approximately x=285..720 and y=455..1175.
-     *
-     * The tracker shows only that building area and reveals it upward as
-     * the fundraising percentage increases.
-     */
-    .building-tracker {
-      position: relative;
-      width: min(100%, 440px);
-      aspect-ratio: 435 / 720;
-      margin: 0 auto;
-      overflow: hidden;
-      border-radius: 12px;
-      background: var(--light);
-      box-shadow: var(--shadow);
-    }
-
-    .building-reveal {
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      height: 35%;
-      overflow: hidden;
-      transition: height .6s ease;
-    }
-
-    .building-reveal img {
-      position: absolute;
-      left: 50%;
-      bottom: 0;
-      width: 1040px;
-      max-width: none;
-      height: auto;
-      transform: translateX(-50%);
-      border-radius: 0;
-      box-shadow: none;
-    }
-
-    .fundraising-info {
-      text-align: center;
-    }
-
-    .raised-amount {
-      font-family: Georgia, serif;
-      font-size: clamp(48px, 7vw, 72px);
-      font-weight: bold;
-      color: var(--navy);
-      line-height: 1;
-    }
-
-    .raised-label {
-      font-weight: bold;
-      letter-spacing: 2px;
-      color: var(--olive);
-      margin-top: 10px;
-    }
-
-    .goal-text {
-      margin: 12px 0 20px;
-      font-size: 18px;
-    }
-
-    .progress-bar {
-      width: 100%;
-      height: 24px;
-      background: #e7e3d8;
-      border-radius: 20px;
-      overflow: hidden;
-      margin: 20px 0 8px;
-    }
-
-    .progress-fill {
-      height: 100%;
-      width: 35%;
-      background: var(--olive);
-      border-radius: 20px;
-      transition: width .4s ease;
-    }
-
-    .progress-numbers {
-      display: flex;
-      justify-content: space-between;
-      font-size: 14px;
-      font-weight: bold;
-      color: var(--navy);
-    }
-
-    .tracker-note {
-      margin-top: 22px;
-      padding: 15px;
-      background: var(--light);
-      border-radius: 8px;
-      font-size: 14px;
-    }
-
-    .tracker-note strong {
-      color: var(--olive);
-    }
-
-    .story-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-    }
-
-    .story-card {
-      background: var(--white);
-      border-radius: 12px;
-      padding: 25px;
-      border: 1px solid var(--border);
-    }
-
-    .help-grid {
+    .grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
+      gap: 18px;
     }
 
-    .help-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 25px;
+    .mini {
+      background: #f7f6f1;
+      padding: 22px;
+      border-radius: 10px;
+    }
+
+    .mini h3 {
+      margin-top: 0;
+      font-size: 23px;
+    }
+
+
+    /* =========================
+       CHURCHES & ORGANIZATIONS
+       ========================= */
+
+    .church-box {
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 14px;
+      padding: 32px;
+      margin: 24px 0;
+    }
+
+    .church-box h2,
+    .church-box h3 {
+      color: var(--white);
+    }
+
+    .church-box a {
+      color: var(--white);
+    }
+
+
+    /* =========================
+       CONTACT
+       ========================= */
+
+    .contact-box {
       text-align: center;
     }
 
-    .help-card h3 {
-      color: var(--olive);
-    }
 
-    .church-list {
-      padding-left: 22px;
-    }
-
-    .closing {
-      background: var(--navy-dark);
-      color: var(--white);
-      text-align: center;
-    }
-
-    .closing h2 {
-      color: var(--white);
-    }
-
-    .closing .btn-primary {
-      background: var(--gold);
-      color: var(--navy-dark);
-    }
+    /* =========================
+       FOOTER
+       ========================= */
 
     footer {
-      background: var(--navy-dark);
-      color: #dce5ec;
+      background: var(--navy);
+      color: var(--white);
       text-align: center;
-      padding: 25px 15px;
-      border-top: 1px solid rgba(255,255,255,.15);
+      padding: 30px 20px;
     }
 
-    .signature {
-      margin-top: 25px;
-      font-family: Georgia, serif;
-      font-style: italic;
+    footer .signature {
+      margin-top: 8px;
+      font-size: 14px;
+      opacity: 0.9;
     }
 
-    @media (max-width: 800px) {
-      .nav-inner {
-        flex-direction: column;
-      }
+
+    /* =========================
+       MOBILE
+       ========================= */
+
+    @media (max-width: 760px) {
 
       nav {
-        justify-content: center;
+        flex-direction: column;
+        align-items: flex-start;
       }
 
-      .hero-grid,
-      .two-col,
-      .fundraising-layout {
+      nav a {
+        margin: 0 15px 0 0;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        margin-top: 25px;
+      }
+
+      .hero-heading {
+        grid-column: 1;
+      }
+
+      .hero-content {
+        grid-column: 1;
+      }
+
+      .hero-image {
+        grid-column: 1;
+      }
+
+      h1 {
+        font-size: 40px;
+      }
+
+      .grid {
         grid-template-columns: 1fr;
       }
 
-      .story-grid,
-      .help-grid {
-        grid-template-columns: 1fr;
-      }
-
-      section {
-        padding: 52px 0;
+      .card {
+        padding: 24px;
       }
     }
   </style>
 </head>
 
+
 <body>
 
-<header class="site-header">
-  <div class="nav-inner">
-    <a class="brand" href="#top">
-      <span>STAND WITH</span>
-      <span>OSTEP WESLEY</span>
-    </a>
 
-    <nav aria-label="Main navigation">
-      <a href="#top">Home</a>
+<!-- =========================
+     STICKY NAVIGATION
+     ========================= -->
+
+<header>
+
+  <nav>
+
+<a class="brand" href="#">
+  Standing With Ostep Wesley
+</a>
+
+    <div>
       <a href="#story">His Story</a>
       <a href="#status">Immigration Status</a>
       <a href="#career">His Career</a>
       <a href="#help">How to Help</a>
       <a href="#contact">Contact</a>
-    </nav>
-  </div>
+    </div>
+
+  </nav>
+
 </header>
 
-<main id="top">
 
-  <section class="hero">
-    <div class="container hero-grid">
-      <div>
-        <p class="eyebrow">Helping a brother, neighbor, and friend obtain justice</p>
+<!-- =========================
+     HERO
+     ========================= -->
 
-        <h1>Help Ostep Wesley Obtain the Legal Representation He Needs</h1>
+<section class="hero">
 
-        <p class="hero-lead">
-          Ostep Wesley came to the United States through a legal immigration process
-          and has spent many years building a life here.
-        </p>
 
-        <p>
-          He earned a Master's degree in Architecture from the University of Memphis,
-          served within the Calvary Chapel fellowship, and has continued working toward
-          a career in architecture.
-        </p>
+  <!-- FULL-WIDTH HERO HEADLINE -->
 
-        <p>
-          Ostep is not an illegal immigrant and has made every immigration court
-          appearance required of him to date.
-        </p>
+  <div class="hero-heading">
 
-        <div class="btn-row">
-          <a class="btn btn-primary"
-             href="https://www.givesendgo.com/legal-support-for-ostepts-immigration-cou"
-             target="_blank" rel="noopener">Donate on GiveSendGo</a>
-
-          <a class="btn btn-secondary"
-             href="https://forms.gle/wQUZaPhzYotuBRjj9"
-             target="_blank" rel="noopener">Contact David</a>
-        </div>
-      </div>
-
-      <div>
-        <img class="hero-photo"
-             src="ostep-photo.jpg"
-             alt="Ostep Wesley">
-      </div>
+    <div class="kicker">
+      Helping a brother, neighbor, and friend obtain justice
     </div>
-  </section>
 
-  <section id="status" class="section-alt">
-    <div class="container two-col">
+    <h1>
+      Help Ostep Wesley Obtain the Legal Representation He Needs
+    </h1>
+
+  </div>
+
+
+  <!-- HERO TEXT / FUNDRAISING -->
+
+  <div class="hero-content">
+
+    <p>
+      Ostep Wesley came to the United States through a legal immigration
+      process and has spent many years building a life here. He earned a
+      Master's degree in Architecture from the University of Memphis, served
+      within the Calvary Chapel fellowship, and has continued working toward
+      a career in architecture.
+    </p>
+
+    <p>
+      Ostep is <strong>not an illegal immigrant</strong> and has made every
+      immigration court appearance required of him to date.
+    </p>
+
+    <p>
+      He now faces an immigration court hearing on
+      <strong>November 30, 2026</strong> and needs qualified legal
+      representation to properly present his case.
+    </p>
+
+
+    <div class="highlight">
+
+      <strong class="amount">
+        $15,000 Fundraising Goal
+      </strong>
+
       <div>
-        <h2>Immigration Status</h2>
-
-        <p>
-          Ostep came to the United States in 2013 on a companion visa associated
-          with his wife's medical provider visa. During the course of their marriage,
-          a green card application was filed, but Ostep's name was subsequently removed
-          from that application.
-        </p>
-
-        <p>
-          Ostep was then able to change his immigration status to that of a student
-          and remained in the United States under that status while pursuing his
-          education. He went on to earn his Master's degree in Architecture from the
-          University of Memphis.
-        </p>
-
-        <p>
-          Now that Ostep has completed his education, his student status can no longer
-          provide the basis for him to remain in the United States indefinitely.
-          His current immigration circumstances therefore require him to pursue another
-          legal path through the immigration system.
-        </p>
+        <strong>$13,000</strong> is needed for Ostep's initial legal defense.
+        His attorney has advised that those funds must be placed in escrow
+        before she can begin working on his case.
       </div>
 
-      <div class="card urgent">
-        <h3>URGENT NEED</h3>
-
-        <p>Ostep is facing an immigration court hearing on:</p>
-
-        <div class="urgent-date">NOVEMBER 30, 2026</div>
-
-        <hr>
-
-        <p>
-          He has secured an attorney who is willing to represent him, but approximately
-          <strong>$13,000</strong> must be placed in escrow for his initial legal defense
-          before work can begin.
-        </p>
-
-        <div class="urgent-money">$13,000</div>
-
-        <p style="text-align:center;">
-          Your support can help Ostep obtain the legal representation he needs
-          before his hearing.
-        </p>
-      </div>
     </div>
-  </section>
 
-  <section id="fundraising" class="fundraising">
-    <div class="container">
 
-      <h2>Building a Path Forward</h2>
+    <div class="buttons">
 
-      <div class="fundraising-layout">
+      <a
+        class="btn primary"
+        href="https://www.givesendgo.com/legal-support-for-osteps-immigration-cou"
+        target="_blank"
+        rel="noopener"
+      >
+        Donate on GiveSendGo
+      </a>
+      <a
+        class="btn secondary"
+        href="https://forms.gle/wQUZaPhzYotuBRjj9"
+        target="_blank"
+        rel="noopener"
+      >
+        Contact David
+      </a>
 
-        <div class="fundraising-graphic">
-          <!--
-            DYNAMIC BUILDING TRACKER
-            building-tracker.png must be in the ROOT of the GitHub repository.
+    </div>
+<div class="support-matters">
+  <h3>Why Your Support Matters</h3>
 
-            The JavaScript below controls the reveal percentage.
-            At 0% the building is not visible.
-            As donations increase, the building is progressively revealed
-            from the foundation upward.
-          -->
-          <div class="building-tracker" aria-label="Building progress tracker">
-            <div class="building-reveal">
-              <img src="building-tracker.png"
-                   alt="Building progress illustration showing Ostep's future being built">
-            </div>
-          </div>
-        </div>
+  <p>
+    Ostep has followed the legal avenues available to him throughout this
+    process. He is now at a point where professional legal representation is
+    essential to help him navigate the complexity of his case and protect his
+    ability to remain and build his future in the United States.
+  </p>
+</div>
+  </div>
 
-        <div class="fundraising-info">
-          <div class="raised-amount" id="raisedAmount">$5,250</div>
-          <div class="raised-label">RAISED</div>
 
-          <p class="goal-text">
-            toward a <strong id="goalAmount">$15,000</strong> fundraising goal
-          </p>
+  <!-- OSTEP'S EXISTING IMAGE -->
 
-          <div class="progress-bar" aria-label="Fundraising progress">
-            <div class="progress-fill" id="progressFill"></div>
-          </div>
+<div class="hero-image">
 
-          <div class="progress-numbers">
-            <span id="percentFunded">35% funded</span>
-            <span id="remainingAmount">$9,750 remaining</span>
-          </div>
+  <img
+    class="photo"
+    src="ostep-photo.jpg"
+    alt="Ostep Wesley"
+  >
 
-          <div class="tracker-note">
-            <strong>MANUAL UPDATE:</strong>
-            When the campaign total changes, edit only the
-            <strong>CURRENT_RAISED</strong> number near the bottom of this file.
-            The percentage, remaining amount, progress bar, displayed total,
-            and building construction will update automatically.
-          </div>
+  <div class="fundraiser">
 
-          <div class="btn-row" style="justify-content:center;">
-            <a class="btn btn-primary"
-               href="https://www.givesendgo.com/legal-support-for-ostepts-immigration-cou"
-               target="_blank" rel="noopener">Donate Now</a>
-          </div>
-        </div>
+    <h3>Building a Path Forward</h3>
+
+    <div class="thermometer-wrap">
+
+      <div class="thermometer">
+
+        <div
+          class="thermometer-fill"
+          id="thermometerFill"
+        ></div>
+
+        <div class="thermometer-bulb"></div>
 
       </div>
-    </div>
-  </section>
 
-  <section id="story">
-    <div class="container">
-      <h2>Why Your Support Matters</h2>
+      <div class="thermometer-scale">
+        <span>$15,000</span>
+        <span>$10,000</span>
+        <span>$5,000</span>
+        <span>$0</span>
+      </div>
+
+    </div>
+
+    <div class="fundraiser-total">
+
+      <span class="raised" id="amountRaised">
+        $250
+      </span>
+
+      <span class="goal">
+        raised toward a $15,000 goal
+      </span>
+
+      <div class="fundraiser-percent" id="fundraiserPercent">
+        1.7% funded
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+</section>
+
+
+
+<main>
+
+
+<!-- =========================
+     IMMIGRATION STATUS
+     ========================= -->
+
+<section id="status" class="card">
+
+  <h2>
+    Ostep Is Not an Illegal Immigrant or Undocumented
+  </h2>
+
+  <p>
+    Ostep came to the United States through a legal immigration process.
+    He has participated in the immigration process through the appropriate
+    legal channels and has made
+    <strong>every immigration court appearance required of him to date.</strong>
+  </p>
+
+  <div class="important">
+
+    <h3>
+      He is facing the immigration system—not avoiding it.
+    </h3>
+
+    <p>
+      Ostep is seeking qualified legal representation to help him properly
+      present his case and pursue a path forward through the legal system.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     WHAT LED TO CURRENT SITUATION
+     ========================= -->
+
+<section id="story" class="card">
+
+  <h2>
+    What Led to Ostep's Current Situation
+  </h2>
+
+  <p>
+    Ostep came to the United States in 2013
+ on a companion visa associated
+    with his wife's medical provider visa. During the course of their
+    marriage, a green card application was filed, but Ostep's name was
+    subsequently removed from that application.
+  </p>
+
+  <p>
+    Ostep was then able to change his immigration status to that of a student
+    and remained in the United States under that status while pursuing his
+    education. He went on to earn his Master's degree in Architecture from
+    the University of Memphis.
+  </p>
+
+  <p>
+    Now that Ostep has completed his education, his student status can no
+    longer provide the basis for him to remain in the United States
+    indefinitely. His current immigration circumstances therefore require
+    him to pursue another legal path through the immigration system.
+  </p>
+
+  <p>
+    This is where his situation has become particularly complicated.
+    Ostep has continued to comply with the immigration process and has made
+    every immigration court appearance required of him to date. He now needs
+    qualified legal representation to evaluate his circumstances and
+    properly present his case.
+  </p>
+
+</section>
+
+
+
+<!-- =========================
+     A LIFE BUILT IN THE UNITED STATES
+     ========================= -->
+
+<section id="career" class="card">
+
+  <h2>
+    A Life Built in the United States
+  </h2>
+
+  <p>
+    Ostep has spent many years building a life in the United States. During
+    that time, he pursued his education, developed professional skills,
+    became part of church communities, and built relationships with people
+    who have come to know and care about him.
+  </p>
+
+  <p>
+    Ostep earned his <strong>Master's degree in Architecture from the
+    University of Memphis</strong>. He has pursued opportunities to put that
+    education into practice, including architecture internships, and has
+    continued working toward a career in his field despite the obstacles
+    created by his immigration circumstances.
+  </p>
+
+  <p>
+    His involvement within the Calvary Chapel fellowship has also been an
+    important part of his life. He has served wherever there was a need,
+    including fellowship, worship, greeting, cleaning, setup and takedown,
+    conferences, and special events.
+  </p>
+
+  <div class="church-family-photo">
+  <img src="IMG_1788.jpeg" alt="Ostep Wesley with members of his church family">
+  <p class="photo-caption">
+    Ostep with Pastor John Pillivant and David.
+  </p>
+ </div>
+
+  <p>
+    Ostep's goal is to use the education, experience, and skills he has
+    developed during his years in the United States to build a career in
+    architecture and <strong>give back to the country that has been his home
+    for so long.</strong>
+  </p>
+
+</section>
+
+
+
+<!-- =========================
+     WORK AUTHORIZATION
+     ========================= -->
+
+<section class="card">
+
+  <h2>
+    Following the Law While Seeking a Path Forward
+  </h2>
+
+  <p>
+    Ostep's loss of work authorization has made it legally impossible for him
+    to obtain employment in the United States. Despite having the education,
+    experience, and desire to work, he has chosen to abide by the law rather
+    than accept employment without authorization.
+  </p>
+
+  <p>
+    Ostep has continued pursuing legitimate opportunities in architecture,
+    including internships, and has actually completed an architecture
+    internship. However, the complexity of his immigration circumstances has
+    made it difficult to find an architecture firm able to help him advance
+    his career while his immigration situation remains unresolved.
+  </p>
+
+  <p>
+    Rather than work outside the legal system, Ostep has continued to pursue
+    a lawful path forward. He is seeking qualified legal representation to
+    help resolve his immigration circumstances so that he can ultimately
+    return to the workforce and put his education and experience to use.
+  </p>
+
+  <p>
+    <strong>
+      Ostep wants to work. He has the education and experience to contribute.
+      He is choosing to follow the law while he works toward obtaining a
+      legal path to employment.
+    </strong>
+  </p>
+
+</section>
+
+
+
+<!-- =========================
+     MARSY'S LAW
+     ========================= -->
+
+<section class="card">
+
+  <h2>
+    When Protections Intended to Help Victims Become an Obstacle to Them Instead
+  </h2>
+
+  <p>
+    Ostep's circumstances have also created an unusual situation involving
+    <strong>Marsy's Law and protections intended to safeguard victims of
+    abuse.</strong>
+  </p>
+
+  <p>
+    Ostep maintains that he was himself a victim of abuse in circumstances
+    surrounding the breakdown of his marriage. However, because of
+    protections relating to victims and the confidentiality of certain
+    records, he has encountered difficulty obtaining evidence that he
+    believes may be relevant to his own defense.
+  </p>
+
+  <p>
+    This has created a particularly difficult situation: protections intended
+    FOR him, in this circumstance, have become an obstacle to him in seeking
+    to obtain evidence crucial to his legal defense.
+  </p>
+
+  <p>
+    We are not attempting to make legal determinations through this website.
+    Those questions belong with Ostep's attorney and the appropriate legal
+    authorities. We are sharing this circumstance because it helps explain
+    why his case is complicated and why qualified legal representation is so
+    important.
+  </p>
+
+  <p>
+    His attorney can determine what evidence is relevant, what information
+    can legally be obtained, and how that information may be presented
+    through the appropriate legal process.
+  </p>
+
+</section>
+
+
+
+<!-- =========================
+     WHY LEGAL REPRESENTATION MATTERS
+     ========================= -->
+
+<section class="card">
+
+  <h2>
+    Why Legal Representation Matters
+  </h2>
+
+  <p>
+    Ostep's immigration circumstances are complicated and require qualified
+    legal counsel. He needs an attorney who can review the circumstances of
+    his case, evaluate the evidence available to him, and present his
+    position through the appropriate legal process.
+  </p>
+
+  <p>
+    His upcoming immigration court hearing on
+    <strong>November 30, 2026</strong> makes obtaining representation
+    particularly important. Ostep should not have to navigate a complicated
+    immigration matter of this significance on his own.
+  </p>
+
+  <p>
+    His attorney has advised that
+    <strong>$13,000 must be placed in escrow before she can begin his initial
+    legal defense.</strong> The overall fundraising goal is
+    <strong>$15,000</strong>, with the additional funds intended to help with
+    further legal and case-related expenses as his matter progresses.
+  </p>
+
+  <p>
+    <strong>
+      The purpose of this fundraiser is straightforward: to give Ostep access
+      to the legal representation he needs to properly present his case.
+    </strong>
+  </p>
+
+</section>
+
+
+
+<!-- =========================
+     WHY WE ARE ASKING FOR HELP
+     ========================= -->
+
+<section class="card">
+
+  <h2>
+    Why We Are Asking for Help
+  </h2>
+
+  <p>
+    Ostep has worked hard to build a life in the United States. He has
+    pursued his education, served within the Calvary Chapel fellowship,
+    developed experience in architecture, and continued to follow the law
+    while seeking a way forward through the immigration system.
+  </p>
+
+  <p>
+    Today, he faces an immigration court hearing on
+    <strong>November 30, 2026</strong> and needs qualified legal
+    representation to properly present his case.
+  </p>
+
+  <p>
+    His attorney has advised that
+    <strong>$13,000 must be placed in escrow before she can begin his initial
+    legal defense.</strong> Our overall fundraising goal is
+    <strong>$15,000</strong>, with any funds beyond the initial legal-defense
+    requirement helping with additional legal and case-related expenses as
+    his matter progresses.
+  </p>
+
+  <p>
+    We are asking friends, churches, and members of the community to come
+    alongside Ostep and help give him the opportunity to have his case
+    properly represented.
+  </p>
+
+  <p>
+    <strong>
+      This fundraiser isn't about asking people to solve Ostep's immigration
+      case. It's about helping make sure he has qualified legal representation
+      as he faces it.
+    </strong>
+  </p>
+
+</section>
+
+
+
+<!-- =========================
+     HOW YOU CAN HELP
+     ========================= -->
+
+<section id="help" class="card">
+
+  <h2>
+    How You Can Help
+  </h2>
+
+  <p>
+    There are several meaningful ways you can stand with Ostep during this
+    difficult time. You don't have to be able to make a large donation to
+    make a difference.
+  </p>
+
+
+  <div class="grid">
+
+
+    <div class="mini">
+
+      <h3>
+        Donate
+      </h3>
 
       <p>
-        Ostep has followed the legal avenues available to him throughout this process.
-        He is now at a point where professional legal representation is essential to
-        help him navigate the complexity of his case and protect his ability to remain
-        and build his future in the United States.
+        Help us reach the $15,000 fundraising goal and provide Ostep with the
+        legal representation he needs.
       </p>
 
-      <div class="story-grid">
-        <article class="story-card">
-          <h3>Following the Law While Seeking a Path Forward</h3>
-          <p>
-            Ostep's loss of work authorization has made it legally impossible for him
-            to obtain employment in the United States. Despite having the education,
-            experience, and desire to work, he has chosen to abide by the law rather
-            than accept employment without authorization.
-          </p>
-          <p>
-            Ostep has continued pursuing legitimate opportunities in architecture,
-            including internships, and has actually completed an architecture internship.
-          </p>
-        </article>
+      <a
+        href="https://www.givesendgo.com/legal-support-for-osteps-immigration-cou"
+        target="_blank"
+        rel="noopener"
+      >
+        Donate on GiveSendGo →
+      </a>
 
-        <article class="story-card">
-          <h3>A Life Built in the United States</h3>
-          <p>
-            Ostep has spent many years building a life in the United States. During
-            that time, he pursued his education, developed professional skills, became
-            part of church communities, and built relationships with people who have
-            come to know and care about him.
-          </p>
-          <p>
-            His goal is to use the education, experience, and skills he has developed
-            during his years in the United States to build a career in architecture
-            and give back to the country that has been his home for so long.
-          </p>
-        </article>
-
-        <article class="story-card">
-          <h3>Calvary Chapel Fellowship</h3>
-          <p>
-            His involvement within the Calvary Chapel fellowship has also been an
-            important part of his life. He has served wherever there was a need,
-            including fellowship, worship, greeting, cleaning, setup and takedown,
-            conferences, and special events.
-          </p>
-        </article>
-
-        <article class="story-card">
-          <h3>Why Legal Representation Matters</h3>
-          <p>
-            Ostep's immigration circumstances are complicated and require qualified
-            legal counsel. He needs an attorney who can review the circumstances of
-            his case, evaluate the evidence available to him, and present his position
-            through the appropriate legal process.
-          </p>
-        </article>
-      </div>
     </div>
-  </section>
 
-  <section id="career" class="section-alt">
-    <div class="container two-col">
-      <div>
-        <h2>His Education & Career</h2>
 
-        <p>
-          Ostep earned his Master's degree in Architecture from the University of
-          Memphis. He has pursued opportunities to put that education into practice,
-          including architecture internships, and has continued working toward a
-          career in his field despite the obstacles created by his immigration
-          circumstances.
-        </p>
+    <div class="mini">
 
-        <p>
-          Ostep wants to work. He has the education and experience to contribute.
-          He is choosing to follow the law while he works toward obtaining a legal
-          path to employment.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>A Future Worth Building</h3>
-        <p>
-          The goal is not simply to get Ostep through one hearing. The goal is to help
-          him obtain the legal representation necessary to properly present his case
-          and pursue a lawful path forward.
-        </p>
-        <p>
-          With the right legal help, Ostep hopes to put his education and professional
-          experience to work and continue building a life in the United States.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section id="help">
-    <div class="container">
-      <h2>How You Can Help</h2>
-
-      <div class="help-grid">
-        <article class="help-card">
-          <h3>Donate</h3>
-          <p>
-            Help us reach the $15,000 fundraising goal and provide Ostep with the
-            legal representation he needs.
-          </p>
-          <a class="btn btn-primary"
-             href="https://www.givesendgo.com/legal-support-for-ostepts-immigration-cou"
-             target="_blank" rel="noopener">Donate</a>
-        </article>
-
-        <article class="help-card">
-          <h3>Share</h3>
-          <p>
-            Share Ostep's story with your friends, family, church, Bible study,
-            professional network, and community. One person sharing this campaign
-            could connect Ostep with someone who can help.
-          </p>
-        </article>
-
-        <article class="help-card">
-          <h3>Pray</h3>
-          <p>
-            Pray for Ostep, his attorney, his upcoming court proceedings, and a
-            positive resolution to his situation.
-          </p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-alt">
-    <div class="container two-col">
-      <div>
-        <h2>For Churches & Organizations</h2>
-
-        <p>
-          Would your church, ministry, or organization be willing to help Ostep?
-        </p>
-
-        <ul class="church-list">
-          <li>Share the fundraiser with your congregation.</li>
-          <li>Include the fundraiser in a church bulletin or newsletter.</li>
-          <li>Share it with a small group or Bible study.</li>
-          <li>Display or distribute the campaign flyer and QR code.</li>
-          <li>Connect us with other churches, ministries, or organizations that may help.</li>
-        </ul>
-
-        <div class="btn-row">
-          <a class="btn btn-secondary"
-             href="ostep-fundraiser-flyer.png"
-             target="_blank" rel="noopener">View Printable Flyer</a>
-
-          <a class="btn btn-primary"
-             href="https://forms.gle/wQUZaPhzYotuBRjj9"
-             target="_blank" rel="noopener">Contact David</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <h3>Every Introduction Helps</h3>
-        <p>
-          If you are connected with a church, ministry, organization, attorney,
-          professional network, or other resource that may be able to help, please
-          reach out.
-        </p>
-
-        <p>
-          This fundraiser isn't about asking people to solve Ostep's immigration
-          case. It is about helping make sure he has qualified legal representation
-          as he faces it.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="container">
-      <h2>About This Campaign</h2>
+      <h3>
+        Share
+      </h3>
 
       <p>
-        This campaign was created by David Miller to help Ostep Wesley obtain legal
-        representation. The information presented on this website is based on David's
-        understanding of Ostep's circumstances and is intended to explain why legal
-        assistance is needed.
+        Share Ostep's story with your friends, family, church, Bible study,
+        and community. One person sharing this campaign could connect Ostep
+        with someone who can help.
       </p>
 
-      <p>
-        This website is not intended to provide legal advice or make legal
-        determinations concerning Ostep's case. Questions concerning the legal aspects
-        of his case should be directed to his attorney.
-      </p>
-
-      <div class="card">
-        <h3>Questions or Want to Help?</h3>
-        <p>
-          If you would like additional information, can help share Ostep's story,
-          represent a church or organization, or may be able to provide other
-          assistance, please contact David Miller.
-        </p>
-
-        <a class="btn btn-primary"
-           href="https://forms.gle/wQUZaPhzYotuBRjj9"
-           target="_blank" rel="noopener">Contact David</a>
-      </div>
-
-      <div class="signature">
-        Sincerely,<br><br>
-        Fmr. SSgt. David Miller, USAFR. DAV, VFW, OEF
-      </div>
     </div>
-  </section>
 
-  <section class="closing">
-    <div class="container">
-      <h2>Stand With Ostep</h2>
 
-      <p>
-        Ostep has spent many years building a life in the United States.
-        He has pursued his education, served his community, and worked toward
-        a future in architecture.
-      </p>
+    <div class="mini">
+
+      <h3>
+        Pray
+      </h3>
 
       <p>
-        Now he needs the opportunity to have his case properly represented.
+        Pray for Ostep, his attorney, his upcoming court proceedings, and a
+        positive resolution to his situation.
       </p>
 
-      <div class="btn-row" style="justify-content:center;">
-        <a class="btn btn-primary"
-           href="https://www.givesendgo.com/legal-support-for-ostepts-immigration-cou"
-           target="_blank" rel="noopener">Donate on GiveSendGo</a>
-
-        <a class="btn btn-secondary"
-           href="https://forms.gle/wQUZaPhzYotuBRjj9"
-           target="_blank" rel="noopener">Contact David</a>
-      </div>
     </div>
-  </section>
+
+
+  </div>
+
+
+  <div class="important">
+
+    <h3>
+      Connect
+    </h3>
+
+    <p>
+      If you are connected with a church, ministry, organization, attorney,
+      or other resource that may be able to help, please contact David.
+    </p>
+
+    <a
+      class="btn secondary"
+      href="https://forms.gle/wQUZaPhzYotuBRjj9"
+      target="_blank"
+      rel="noopener"
+    >
+      Contact David
+    </a>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     FOR CHURCHES & ORGANIZATIONS
+     ========================= -->
+
+<section class="church-box">
+
+  <h2>
+    For Churches & Organizations
+  </h2>
+
+  <p>
+    Would your church, ministry, or organization be willing to help Ostep?
+  </p>
+
+  <p>
+    There are several ways you can make a difference:
+  </p>
+
+  <ul>
+
+    <li>
+      Share the fundraiser with your congregation.
+    </li>
+
+    <li>
+      Include the fundraiser in a church bulletin or newsletter.
+    </li>
+
+    <li>
+      Share it with a small group or Bible study.
+    </li>
+
+    <li>
+      Display or distribute the campaign flyer and QR code.
+    </li>
+
+    <li>
+      Connect us with other churches, ministries, or organizations that may
+      be able to help.
+    </li>
+
+  </ul>
+
+  <p>
+    We've prepared a printable flyer with Ostep's fundraiser information and
+    QR code. You can download it to print, distribute, or share digitally
+    with your church or organization.
+  </p>
+
+
+  <div class="buttons">
+
+    <a
+      class="btn primary"
+      href="ostep-fundraiser-flyer.png"
+      download
+    >
+      Download Printable Flyer
+    </a>
+
+    <a
+      class="btn secondary"
+      href="https://forms.gle/wQUZaPhzYotuBRjj9"
+      target="_blank"
+      rel="noopener"
+    >
+      Contact David
+    </a>
+
+  </div>
+
+
+  <p style="margin-top: 22px;">
+    Every introduction and every share helps us reach someone who may be able
+    to make a difference.
+  </p>
+
+</section>
+
+
+
+<!-- =========================
+     ABOUT THIS CAMPAIGN
+     ========================= -->
+
+<section class="card">
+
+  <h2>
+    About This Campaign
+  </h2>
+
+  <p>
+    This campaign was created by David Miller to help Ostep Wesley obtain
+    legal representation. The information presented on this website is based
+    on David's understanding of Ostep's circumstances and is intended to
+    explain why legal assistance is needed.
+  </p>
+
+  <p>
+    This website is not intended to provide legal advice or make legal
+    determinations concerning Ostep's case. Questions concerning the legal
+    aspects of his case should be directed to his attorney.
+  </p>
+
+</section>
+
+
+
+<!-- =========================
+     CONTACT
+     ========================= -->
+
+<section id="contact" class="card contact-box">
+
+  <h2>
+    Questions or Want to Help?
+  </h2>
+
+  <p>
+    If you would like additional information, can help share Ostep's story,
+    represent a church or organization, or may be able to provide other
+    assistance, please contact David Miller.
+  </p>
+
+  <p>
+    You can also use the contact form if you have questions about the
+    fundraiser or would simply like to learn more.
+  </p>
+
+  <a
+    class="btn secondary"
+    href="https://forms.gle/wQUZaPhzYotuBRjj9"
+    target="_blank"
+    rel="noopener"
+  >
+    Contact David
+  </a>
+
+</section>
+
+
+
+<!-- =========================
+     FINAL CALL TO ACTION
+     ========================= -->
+
+<section class="card contact-box">
+
+  <h2>
+    Stand With Ostep
+  </h2>
+
+  <p>
+    Ostep has spent many years building a life in the United States. He has
+    pursued his education, served his community, and worked toward a future
+    in architecture.
+  </p>
+
+  <p>
+    Now he needs the opportunity to have his case properly represented.
+  </p>
+
+  <p>
+    <strong>
+      Help us reach the $15,000 fundraising goal.
+    </strong>
+  </p>
+
+
+  <div class="buttons" style="justify-content:center;">
+
+    <a
+      class="btn primary"
+      href="https://www.givesendgo.com/legal-support-for-osteps-immigration-cou"
+      target="_blank"
+      rel="noopener"
+    >
+      Donate on GiveSendGo
+    </a>
+
+    <a
+      class="btn secondary"
+      href="https://forms.gle/wQUZaPhzYotuBRjj9"
+      target="_blank"
+      rel="noopener"
+    >
+      Contact David
+    </a>
+
+  </div>
+
+</section>
+
 
 </main>
 
+
+
+<!-- =========================
+     FOOTER
+     ========================= -->
+
 <footer>
-  <div>Standing With Ostep Wesley</div>
-  <div>Help build a brighter future.</div>
+
+  <strong>
+    Standing With Ostep Wesley
+  </strong>
+
+  <div class="signature">
+    Fmr. SSgt. David Miller, USAFR. DAV, VFW, OEF
+  </div>
+
 </footer>
 
 <script>
-  /*
-   * ============================================================
-   * EASY FUNDRAISING STATUS UPDATE
-   * ============================================================
-   * Change ONLY this number when the amount raised changes.
-   *
-   * Example:
-   *   CURRENT_RAISED = 6000;
-   *
-   * Do not change the code below it.
-   * ============================================================
-   */
+  const currentAmount = 250;
+  const fundraisingGoal = 15000;
 
-  const CURRENT_RAISED = 5250;
-  const FUNDRAISING_GOAL = 15000;
-
-  const raisedAmount = document.getElementById("raisedAmount");
-  const goalAmount = document.getElementById("goalAmount");
-  const progressFill = document.getElementById("progressFill");
-  const percentFunded = document.getElementById("percentFunded");
-  const remainingAmount = document.getElementById("remainingAmount");
-
-  const percent = Math.min(
-    100,
-    Math.max(0, (CURRENT_RAISED / FUNDRAISING_GOAL) * 100)
+  const percentage = Math.min(
+    (currentAmount / fundraisingGoal) * 100,
+    100
   );
 
-  const remaining = Math.max(0, FUNDRAISING_GOAL - CURRENT_RAISED);
+  document.getElementById("thermometerFill").style.height =
+    percentage + "%";
 
-  const money = new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-    maximumFractionDigits: 0
-  });
+  document.getElementById("amountRaised").textContent =
+    "$" + currentAmount.toLocaleString();
 
-  raisedAmount.textContent = money.format(CURRENT_RAISED);
-  goalAmount.textContent = money.format(FUNDRAISING_GOAL);
-  progressFill.style.width = percent.toFixed(1) + "%";
-  percentFunded.textContent = Math.round(percent) + "% funded";
-  remainingAmount.textContent =
-    money.format(remaining) + " remaining";
-
-  // Build the building from the bottom upward as donations increase.
-  const buildingReveal = document.querySelector(".building-reveal");
-  if (buildingReveal) {
-    buildingReveal.style.height = percent.toFixed(1) + "%";
-  }
+  document.getElementById("fundraiserPercent").textContent =
+    percentage.toFixed(1) + "% funded";
 </script>
-
 </body>
 </html>
