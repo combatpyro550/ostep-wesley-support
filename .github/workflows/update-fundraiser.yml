@@ -1,0 +1,35 @@
+name: Update fundraiser totals
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-fundraiser-totals
+  cancel-in-progress: true
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out website
+        uses: actions/checkout@v4
+
+      - name: Read current GiveSendGo totals
+        run: python scripts/update_fundraiser.py
+
+      - name: Publish changed totals
+        run: |
+          if git diff --quiet -- fundraiser-data.json; then
+            echo "Fundraiser totals have not changed."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add fundraiser-data.json
+          git commit -m "Update fundraiser totals"
+          git push
