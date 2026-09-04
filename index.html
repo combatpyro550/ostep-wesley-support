@@ -664,11 +664,11 @@
     <div class="fundraiser-total">
 
       <span class="raised" id="amountRaised">
-        $1475
+        $1,475
       </span>
 
       <span class="goal">
-        raised toward a $15,000 goal
+        raised toward a <span id="amountGoal">$15,000</span> goal
       </span>
 
       <div class="fundraiser-percent" id="fundraiserPercent">
@@ -1317,22 +1317,43 @@
 </footer>
 
 <script>
-  const currentAmount = 1475;
-  const fundraisingGoal = 15000;
+  const FALLBACK_TOTALS = { raised: 1475, goal: 15000 };
 
-  const percentage = Math.min(
-    (currentAmount / fundraisingGoal) * 100,
-    100
-  );
+  function displayFundraiserTotals({ raised, goal }) {
+    const currentAmount = Number(raised);
+    const fundraisingGoal = Number(goal);
 
-  document.getElementById("thermometerFill").style.height =
-    percentage + "%";
+    if (!Number.isFinite(currentAmount) || !Number.isFinite(fundraisingGoal) ||
+        currentAmount < 0 || fundraisingGoal <= 0) {
+      throw new Error("Invalid fundraiser totals");
+    }
 
-  document.getElementById("amountRaised").textContent =
-    "$" + currentAmount.toLocaleString();
+    const percentage = Math.min(
+      (currentAmount / fundraisingGoal) * 100,
+      100
+    );
 
-  document.getElementById("fundraiserPercent").textContent =
-    percentage.toFixed(1) + "% funded";
+    document.getElementById("thermometerFill").style.height =
+      percentage + "%";
+    document.getElementById("amountRaised").textContent =
+      "$" + currentAmount.toLocaleString("en-US");
+    document.getElementById("amountGoal").textContent =
+      "$" + fundraisingGoal.toLocaleString("en-US");
+    document.getElementById("fundraiserPercent").textContent =
+      percentage.toFixed(1) + "% funded";
+  }
+
+  displayFundraiserTotals(FALLBACK_TOTALS);
+
+  fetch("./fundraiser-data.json", { cache: "no-store" })
+    .then((response) => {
+      if (!response.ok) throw new Error("Fundraiser data unavailable");
+      return response.json();
+    })
+    .then(displayFundraiserTotals)
+    .catch((error) => console.warn(
+      "Using the last embedded fundraiser totals:", error.message
+    ));
 </script>
 </body>
 </html>
