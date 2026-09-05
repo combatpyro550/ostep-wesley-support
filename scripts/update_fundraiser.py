@@ -22,7 +22,7 @@ def fetch_campaign() -> str:
     request = Request(
         CAMPAIGN_URL,
         headers={
-            "User-Agent": "Mozilla/5.0 StandWithOstep fundraiser updater/1.0",
+            "User-Agent": "Mozilla/5.0 (compatible; StandWithOstep-Fundraiser-Updater/1.0; +https://standwithostep.org/; contact: combatpyro550@gmail.com)",
             "Accept": "text/html,application/xhtml+xml",
             "Accept-Language": "en-US,en;q=0.9",
         },
