@@ -23,17 +23,11 @@ def fetch_campaign() -> str:
         CAMPAIGN_URL,
         headers={
             "User-Agent": (
-                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-                "AppleWebKit/537.36 (KHTML, like Gecko) "
-                "Chrome/152.0.0.0 Safari/537.36"
+                "Mozilla/5.0 (compatible; StandWithOstep-Fundraiser-Updater/1.0; "
+                "+https://standwithostep.org/; contact: combatpyro550@gmail.com)"
             ),
-            "Accept": (
-                "text/html,application/xhtml+xml,application/xml;q=0.9,"
-                "image/avif,image/webp,image/apng,*/*;q=0.8"
-            ),
+            "Accept": "text/html,application/xhtml+xml",
             "Accept-Language": "en-US,en;q=0.9",
-            "Cache-Control": "no-cache",
-            "Pragma": "no-cache",
         },
     )
 
