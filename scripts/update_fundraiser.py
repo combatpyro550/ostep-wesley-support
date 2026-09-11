@@ -15,7 +15,7 @@ CAMPAIGN_URL = (
     "https://www.givesendgo.com/"
     "legal-support-for-osteps-immigration-cou"
 )
-OUTPUT_PATH = Path(__file__).resolve().parents[1] / "fundraiser-data.json"
+OUTPUT_PATH = Path(__file__).resolve().parent / "fundraiser-data.json"
 
 
 def fetch_campaign() -> str:
